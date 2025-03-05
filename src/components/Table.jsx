@@ -14,10 +14,16 @@ export const Table = ({ operations }) => {
       <tbody>
         {operations.map((operation) => (
           <tr key={operation.id}>
-            <td>{operation.name}</td>
+            <td
+              style={{
+                color: operation.operationType === "deposit" ? "green" : "red",
+              }}
+            >
+              {operation.name}{" "}
+            </td>
             <td>{operation.amount} zł</td>
             <td>{operation.category}</td>
-            <td>{operation.data}</td>
+            <td>{operation.date}</td>
           </tr>
         ))}
       </tbody>
