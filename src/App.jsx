@@ -27,9 +27,6 @@ function App() {
 
   const addOperation = (operation) => {
     const newOperation = { ...operation, id: Date.now() };
-    console.log("Amount:", operation.amount); // 🔹 Powinno pokazać liczbę
-    console.log("Balance:", balance); // 🔹 Powinno pokazać aktualny stan
-
     setOperations([newOperation, ...operations]);
     if (operation.operationType === "withdraw")
       return setBalance(balance - operation.amount);
@@ -38,14 +35,20 @@ function App() {
 
   return (
     <>
-      <div id="showBalance">
+      <div id="header">
         <h1>Manager wydatków</h1>
         <h2>Dostępne środki:</h2>
-        <div> {balance} zł</div>
+        <span
+          id="showBalance"
+          style={{
+            color: balance > 0 ? "green" : balance < 0 ? "red" : "white",
+          }}
+        >
+          {" "}
+          💸 {balance} zł
+        </span>
       </div>
-      <hr />
       <Form onAddOperation={addOperation} />
-      <hr />
       <Table operations={operations} />
     </>
   );

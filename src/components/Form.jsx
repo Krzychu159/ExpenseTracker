@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Form.css";
 
 export const Form = ({ onAddOperation }) => {
   const today = new Date().toISOString().split("T")[0];
@@ -34,7 +35,7 @@ export const Form = ({ onAddOperation }) => {
         />{" "}
         Wpłata
       </div>
-      <div>
+      <div id="formData">
         <label htmlFor="name">Nazwa </label>
         <input
           type="text"
@@ -59,7 +60,7 @@ export const Form = ({ onAddOperation }) => {
           value={category}
           onChange={(e) => setCategory(e.target.value)}
         />
-        <label htmlFor="category">Data </label>
+        <label htmlFor="date">Data </label>
         <input
           type="date"
           id="category"
