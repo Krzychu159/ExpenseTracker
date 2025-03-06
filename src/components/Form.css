@@ -1,5 +1,40 @@
-form {
-}
-#formData {
+.inputDiv {
+  display: flex;
   flex-direction: column;
+  padding: 5px;
+}
+
+.inputDiv label {
+  font-size: 0.7em;
+  color: azure;
+}
+
+.inputDiv input {
+  font-size: 0.7em;
+  color: azure;
+  padding: 5px;
+  min-width: 150px;
+  width: 100%;
+}
+
+.inputDiv button {
+  height: 100%;
+  grid-column: span 3;
+  width: 100%;
+}
+
+#formData {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 600px;
+  align-items: start;
+}
+
+.formElement {
+  display: contents;
+}
+
+form {
+  margin: 20px 0 30px 0;
 }
