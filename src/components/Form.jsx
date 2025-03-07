@@ -79,10 +79,10 @@ export const Form = ({ onAddOperation }) => {
               onChange={(e) => setDate(e.target.value)}
             />
           </div>
-          <div className="inputDiv">
-            <label> &nbsp;</label>
-            <button>Dodaj</button>
-          </div>
+        </div>
+        <div className="inputDiv inputDivButton">
+          <label> &nbsp;</label>
+          <button>Dodaj</button>
         </div>
       </div>
     </form>

@@ -26,7 +26,11 @@ function App() {
   const [balance, setBalance] = useState(0);
 
   const addOperation = (operation) => {
-    const newOperation = { ...operation, id: Date.now() };
+    const newOperation = {
+      ...operation,
+      id: Date.now(),
+      category: operation.category.trim() === "" ? "brak" : operation.category,
+    };
     setOperations([newOperation, ...operations]);
     if (operation.operationType === "withdraw")
       return setBalance(balance - operation.amount);
@@ -34,23 +38,27 @@ function App() {
   };
 
   return (
-    <>
-      <div id="header">
-        <h1>Manager wydatków</h1>
-        <h2>Dostępne środki:</h2>
-        <span
-          id="showBalance"
-          style={{
-            color: balance > 0 ? "green" : balance < 0 ? "red" : "white",
-          }}
-        >
-          {" "}
-          💸 {balance} zł
-        </span>
-      </div>
-      <Form onAddOperation={addOperation} />
-      <Table operations={operations} />
-    </>
+    <section id="mainSection">
+      <section id="leftSection">
+        <div id="header">
+          <h1>Manager wydatków</h1>
+          <h2>Dostępne środki:</h2>
+          <span
+            id="showBalance"
+            style={{
+              color: balance > 0 ? "green" : balance < 0 ? "red" : "white",
+            }}
+          >
+            {" "}
+            💸 {balance} zł
+          </span>
+        </div>
+        <Form onAddOperation={addOperation} />
+      </section>
+      <section id="rightSection">
+        <Table operations={operations} />
+      </section>
+    </section>
   );
 }
 

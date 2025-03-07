@@ -1,3 +1,8 @@
+#formData {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
 .inputDiv {
   display: flex;
   flex-direction: column;
@@ -5,36 +10,20 @@
 }
 
 .inputDiv label {
-  font-size: 0.7em;
+  font-size: 0.8em;
   color: azure;
 }
 
 .inputDiv input {
-  font-size: 0.7em;
-  color: azure;
   padding: 5px;
-  min-width: 150px;
   width: 100%;
 }
 
 .inputDiv button {
-  height: 100%;
-  grid-column: span 3;
+  padding: 10px;
   width: 100%;
 }
-
-#formData {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  max-width: 600px;
-  align-items: start;
-}
-
-.formElement {
-  display: contents;
-}
-
-form {
-  margin: 20px 0 30px 0;
+.inputDivButton {
+  grid-column-start: span 2;
+  grid-column-start: 0;
 }
