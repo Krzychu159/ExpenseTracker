@@ -21,6 +21,38 @@ function App() {
       operationType: "withdraw",
       id: 2,
     },
+    {
+      name: "Zakupy spożywcze",
+      amount: 150,
+      category: "Jedzenie",
+      date: "2025-02-05",
+      operationType: "withdraw",
+      id: 3,
+    },
+    {
+      name: "Zwrot za zakupy",
+      amount: 50,
+      category: "Zwrot",
+      date: "2025-02-06",
+      operationType: "deposit",
+      id: 4,
+    },
+    {
+      name: "Rachunek za prąd",
+      amount: 200,
+      category: "Rachunki",
+      date: "2025-02-07",
+      operationType: "withdraw",
+      id: 5,
+    },
+    {
+      name: "Premia",
+      amount: 500,
+      category: "Wypłata",
+      date: "2025-02-08",
+      operationType: "deposit",
+      id: 6,
+    },
   ];
   const [operations, setOperations] = useState(initialOperations);
   const [balance, setBalance] = useState(0);

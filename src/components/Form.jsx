@@ -65,6 +65,7 @@ export const Form = ({ onAddOperation }) => {
             <input
               type="number"
               id="amount"
+              min="0"
               style={{ minWidth: "150px" }} /* 🔹 Minimalna szerokość pola */
               value={amount}
               onChange={(e) => setAmount(Number(e.target.value))}
